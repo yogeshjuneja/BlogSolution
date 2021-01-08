@@ -1,0 +1,55 @@
+
+Note : I have added sql file on git , please create a db in local and refer this sql file and pass connection string in appsettings.json file keyname dbcon
+
+To Login 
+
+HTTPPost
+http://localhost:54125/api/Login/SignIn
+Request (pass username and password same to get token):
+{
+    "Username": "hello",
+    "password": "hello"
+}
+Response : 
+{"requestAt":"2021-01-08T12:31:22.0197383+05:30","expiresIn":1800.0,"tokeyType":"Bearer","accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiaGVsbG8iLCJuYmYiOjE2MTAwODkyODIsImV4cCI6MTYxMDA5MTA4Mn0.UhZ8lChH-iRVgquleBE1EbyguXzLFqEmDQRwwWfLPHI"} 
+
+
+=====================================================================
+In all api's below pass bearer token in header  which you will get from login api
+
+To Get ALl Blogs
+
+[Httpget]
+http://localhost:54125/api/Blog/Get
+
+
+To Insert Blog
+
+[HttpPost]
+http://localhost:54125/api/Blog/Get
+Request
+{
+    "BLOGDATA":"This is new blog data"
+}
+
+
+
+To Update Blogs
+
+[HttpPut]
+http://localhost:54125/api/Blog/Update/{Blogid}
+Request
+{
+
+    "BLOGDATA":"This is blog data to update"
+}
+
+
+To Delete Blogs
+
+[HttpDelete]
+http://localhost:54125/api/Blog/Delete/{BlogID}
+
+
+
+	
